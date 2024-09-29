@@ -23,7 +23,14 @@ const styles = StyleSheet.create({
   containerSection: {
     marginLeft: '5%',
     marginRight: '5%',
-  }
+  },
+  buttonsHeader: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 16,
+  },
 });
 
 const HomeScreen = () => {
@@ -46,10 +53,18 @@ const HomeScreen = () => {
         />
       </View>
       <View style={styles.containerSection}>
-        <View>
-          <View>
-            <Text>My list</Text>
-            <LargeButton text="Wishlist" />
+        <View style={styles.buttonsHeader}>
+          <View style={{ flex: 1 }}>
+            <Text style={{ textAlign: 'right' }}>My list</Text>
+            <View style={{ marginVertical: 24 }}>
+              <LargeButton text="Wishlist" backgroundColor="#333" textColor="#FFF" />
+            </View>
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text>Discover</Text>
+            <View style={{ marginVertical: 24 }}>
+              <LargeButton text="Details" backgroundColor="#F2C94C" textColor={isDarkMode ? "#333" : "#FFF"} />
+            </View>
           </View>
         </View>
       </View>

@@ -4,7 +4,6 @@ import {StyleSheet, Text, View} from 'react-native';
 const styles = StyleSheet.create({
   button: {
     paddingVertical: 14,
-    backgroundColor: 'blue',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -14,10 +13,10 @@ const styles = StyleSheet.create({
   }
 });
 
-const LargeButton = ({text}: {text: string}) => {
+const LargeButton = ({text, backgroundColor, textColor}: {text: string, backgroundColor: string, textColor: string}) => {
   return (
-    <View style={styles.button}>
-      <Text>{text}</Text>
+    <View style={[styles.button, { backgroundColor: backgroundColor }]}>
+      <Text style={{ color: textColor }}>{text}</Text>
     </View>
   );
 }
