@@ -6,6 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import LargeButton from '../components/LargeButton.tsx';
 import {FontFamilies} from '../constants/fonts.tsx';
 import {Cross} from '../utils/Icons.tsx';
+import MoviesCaroussel from '../components/MoviesCaroussel.tsx';
 
 const styles = StyleSheet.create({
   screenSection: {
@@ -107,6 +108,7 @@ const HomeScreen = () => {
             </View>
           </View>
         </View>
+        <MoviesCaroussel title="Marvel studios" />
       </View>
     </View>
   );
