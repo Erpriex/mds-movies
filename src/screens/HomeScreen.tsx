@@ -17,6 +17,7 @@ import {FontFamilies} from '../constants/fonts.tsx';
 import {CrossIcon} from '../utils/Icons.tsx';
 import MoviesCaroussel from '../components/MoviesCaroussel.tsx';
 import {fetchBestMovies, fetchMarvelMovies} from '../services/api.tsx';
+import HomeCategoryFilter from '../components/HomeCategoryFilter.tsx';
 
 const styles = StyleSheet.create({
   screenSection: {
@@ -78,6 +79,7 @@ const styles = StyleSheet.create({
 const HomeScreen = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
+  const [selectedCategory, setSelectedCategory] = useState(0);
   const [marvelMovies, setMarvelMovies] = useState([]);
   const [bestMovies, setBestMovies] = useState([]);
 
@@ -123,6 +125,10 @@ const HomeScreen = () => {
           style={styles.gradientOverlay}
         />
       </View>
+      <HomeCategoryFilter
+        selected={selectedCategory}
+        onSelectCategory={setSelectedCategory}
+      />
       <View style={styles.containerSection}>
         <View style={styles.buttonsHeaderSection}>
           <View style={{flex: 1}}>

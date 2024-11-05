@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 42,
     fontFamily: FontFamilies.GILROY.bold,
-  }
+  },
 });
 
 const EmptyScreen = () => {
@@ -24,7 +24,9 @@ const EmptyScreen = () => {
         styles.screenSection,
         {backgroundColor: isDarkMode ? 'black' : 'white'},
       ]}>
-      <Text style={styles.title}>Soon !</Text>
+      <Text style={[styles.title, {color: isDarkMode ? '#FFF' : '#000'}]}>
+        Soon !
+      </Text>
     </View>
   );
 };
