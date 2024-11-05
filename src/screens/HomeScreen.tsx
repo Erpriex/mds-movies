@@ -1,12 +1,22 @@
-import React from 'react';
-import {useColorScheme, Text, View, StyleSheet, Image} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {
+  useColorScheme,
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  ScrollView,
+} from 'react-native';
 // @ts-ignore
 import HomeBackgroundImg from '../assets/images/home_background.png';
+// @ts-ignore
+import BlackFridayImg from '../assets/images/black_friday.jpeg';
 import LinearGradient from 'react-native-linear-gradient';
 import LargeButton from '../components/LargeButton.tsx';
 import {FontFamilies} from '../constants/fonts.tsx';
-import {Cross} from '../utils/Icons.tsx';
+import {CrossIcon} from '../utils/Icons.tsx';
 import MoviesCaroussel from '../components/MoviesCaroussel.tsx';
+import {fetchBestMovies, fetchMarvelMovies} from '../services/api.tsx';
 
 const styles = StyleSheet.create({
   screenSection: {
@@ -39,10 +49,37 @@ const styles = StyleSheet.create({
     fontFamily: FontFamilies.GILROY.medium,
     fontSize: 16,
   },
+  carousselsContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 32,
+  },
+  blackFridayContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 16,
+  },
+  blackFridayImg: {
+    width: '100%',
+    height: 165,
+    marginTop: 32,
+  },
+  blackFridayTitle: {
+    fontFamily: FontFamilies.GILROY.medium,
+    fontSize: 16,
+  },
+  blackFridayDescription: {
+    fontFamily: FontFamilies.GILROY.regular,
+    fontSize: 12,
+    marginTop: 8,
+  },
 });
 
 const HomeScreen = () => {
   const isDarkMode = useColorScheme() === 'dark';
+
+  const [marvelMovies, setMarvelMovies] = useState([]);
+  const [bestMovies, setBestMovies] = useState([]);
 
   const gradientColors = isDarkMode
     ? ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)', 'rgba(0, 0, 0, 0.8)', 'black']
@@ -53,12 +90,26 @@ const HomeScreen = () => {
         'white',
       ];
 
+  useEffect(() => {
+    const getMarvelMovies = async () => {
+      const marvelMovies = await fetchMarvelMovies();
+      setMarvelMovies(marvelMovies);
+    };
+    const getBestMovies = async () => {
+      const bestMovies = await fetchBestMovies();
+      setBestMovies(bestMovies);
+    };
+    getMarvelMovies();
+    getBestMovies();
+  }, []);
+
   return (
-    <View
+    <ScrollView
       style={[
         styles.screenSection,
         {backgroundColor: isDarkMode ? 'black' : 'white'},
-      ]}>
+      ]}
+      contentContainerStyle={{paddingBottom: 20}}>
       <View style={styles.backgroundImgSection}>
         <Image
           style={{width: '100%'}}
@@ -87,7 +138,7 @@ const HomeScreen = () => {
                 text="Wishlist"
                 backgroundColor="#333"
                 textColor="#FFF"
-                icon={<Cross />}
+                icon={<CrossIcon />}
               />
             </View>
           </View>
@@ -108,9 +159,41 @@ const HomeScreen = () => {
             </View>
           </View>
         </View>
-        <MoviesCaroussel title="Marvel studios" />
+        <View style={styles.carousselsContainer}>
+          <MoviesCaroussel title="Marvel studios" movies={marvelMovies} />
+          <MoviesCaroussel title="Best movies" movies={bestMovies} />
+        </View>
+        <View style={styles.blackFridayContainer}>
+          <Image
+            source={BlackFridayImg}
+            style={styles.blackFridayImg}
+            resizeMode="cover"
+          />
+          <View>
+            <Text
+              style={[
+                styles.blackFridayTitle,
+                {color: isDarkMode ? '#FFF' : '#000'},
+              ]}>
+              Black friday is here !
+            </Text>
+            <Text
+              style={[
+                styles.blackFridayDescription,
+                {color: isDarkMode ? '#FFF' : '#000'},
+              ]}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+              sociis pulvinar auctor nibh nibh iaculis id.
+            </Text>
+          </View>
+          <LargeButton
+            text="Check details"
+            backgroundColor="#F2C94C"
+            textColor={isDarkMode ? '#333' : '#FFF'}
+          />
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
