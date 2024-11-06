@@ -13,6 +13,8 @@ import HomeBackgroundImg from '../assets/images/home_background.png';
 // @ts-ignore
 import HomeBackground2Img from '../assets/images/home_background_2.jpg';
 // @ts-ignore
+import HomeBackground3Img from '../assets/images/home_background_3.jpg';
+// @ts-ignore
 import BlackFridayImg from '../assets/images/black_friday.jpeg';
 import LinearGradient from 'react-native-linear-gradient';
 import LargeButton from '../components/LargeButton.tsx';
@@ -101,7 +103,11 @@ const HomeScreen = () => {
     Category.HORROR,
   ];
 
-  const backgroundImgs = [HomeBackgroundImg, HomeBackground2Img];
+  const backgroundImgs = [
+    HomeBackgroundImg,
+    HomeBackground2Img,
+    HomeBackground3Img,
+  ];
 
   const gradientColors = isDarkMode
     ? ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)', 'rgba(0, 0, 0, 0.8)', 'black']
