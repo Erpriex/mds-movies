@@ -2,6 +2,7 @@ import React from 'react';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import {BlurView} from '@react-native-community/blur';
 import {FontFamilies} from '../constants/fonts.tsx';
+import Category, {getCategoryLabel} from '../utils/Category.tsx';
 
 const styles = StyleSheet.create({
   container: {
@@ -35,42 +36,43 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingVertical: 12,
     borderRadius: 90,
+    fontFamily: FontFamilies.GILROY.bold,
   },
 });
 
 const HomeCategoryFilter = ({
+  categories,
   selected,
   onSelectCategory,
 }: {
-  selected: number;
-  onSelectCategory: (index: number) => void;
+  categories: Category[];
+  selected: Category;
+  onSelectCategory: (category: Category) => void;
 }) => {
-  const categories = ['All', 'Romance', 'Sport', 'Kids', 'Horror'];
-
   return (
     <View style={styles.container}>
       <BlurView
         blurType="dark"
-        blurAmount={10}
+        blurAmount={2}
         reducedTransparencyFallbackColor="rgba(66, 66, 63, 0.80)"
         style={styles.blurContainer}>
         <FlatList
           data={categories}
           horizontal
           showsHorizontalScrollIndicator={false}
-          keyExtractor={item => item}
+          keyExtractor={item => item.toString()}
           contentContainerStyle={styles.categoriesContainer}
-          renderItem={({item, index}) => (
+          renderItem={({item}) => (
             <Text
               style={[
                 styles.text,
-                selected === index && styles.selectedText,
-                index === 0 && selected !== index && {marginLeft: 18},
-                index === categories.length - 1 &&
-                  selected !== index && {marginRight: 18},
+                selected === item && styles.selectedText,
+                categories[0] === item && selected !== item && {marginLeft: 18},
+                categories[categories.length - 1] === item &&
+                  selected !== item && {marginRight: 18},
               ]}
-              onPress={() => onSelectCategory(index)}>
-              {item}
+              onPress={() => onSelectCategory(item)}>
+              {getCategoryLabel(item)}
             </Text>
           )}
         />

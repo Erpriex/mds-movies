@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import {FontFamilies} from '../constants/fonts.tsx';
+import Category, {getCategoryLabel} from '../utils/Category.tsx';
 
 const styles = StyleSheet.create({
   headerCaroussel: {
@@ -46,6 +47,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     width: 100,
   },
+  noMoviesText: {
+    textAlign: 'center',
+    fontFamily: FontFamilies.GILROY.regular,
+    fontSize: 16,
+    color: '#aaa',
+    marginTop: 20,
+  },
 });
 
 interface Movie {
@@ -54,11 +62,18 @@ interface Movie {
   poster_path: string;
 }
 
-const MoviesCaroussel = ({title, movies}: {title: string; movies: Movie[]}) => {
+const MoviesCaroussel = ({
+  title,
+  movies,
+  selectedCategory,
+}: {
+  title: string;
+  movies: Movie[];
+  selectedCategory: Category;
+}) => {
   const isDarkMode = useColorScheme() === 'dark';
 
-  const imageBaseUrl =
-    'https://image.tmdb.org/t/p/w500';
+  const imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
 
   return (
     <View>
@@ -68,36 +83,42 @@ const MoviesCaroussel = ({title, movies}: {title: string; movies: Movie[]}) => {
             styles.carousselTitle,
             {color: isDarkMode ? 'white' : 'dark'},
           ]}>
-          {title}
+          {title} - {getCategoryLabel(selectedCategory)}
         </Text>
         <Text style={styles.seeMore}>See more</Text>
       </View>
-      <FlatList
-        data={movies}
-        horizontal
-        keyExtractor={item => item.id.toString()}
-        contentContainerStyle={styles.mainCaroussel}
-        renderItem={({item}) => (
-          <View style={styles.movieItem}>
-            <Image
-              src={imageBaseUrl + item.poster_path}
-              style={styles.posterImage}
-              resizeMode="cover"
-            />
-            <Text
-              style={[
-                styles.movieTitle,
-                {color: isDarkMode ? 'white' : '#333'},
-              ]}
-              numberOfLines={1}
-              ellipsizeMode='tail'
-            >
-              {item.title}
-            </Text>
-          </View>
-        )}
-        showsHorizontalScrollIndicator={false}
-      />
+
+      {movies.length === 0 ? (
+        <Text style={styles.noMoviesText}>
+          Aucun film n'est à l'affiche avec ce filtre
+        </Text>
+      ) : (
+        <FlatList
+          data={movies}
+          horizontal
+          keyExtractor={item => item.id.toString()}
+          contentContainerStyle={styles.mainCaroussel}
+          renderItem={({item}) => (
+            <View style={styles.movieItem}>
+              <Image
+                source={{uri: imageBaseUrl + item.poster_path}}
+                style={styles.posterImage}
+                resizeMode="cover"
+              />
+              <Text
+                style={[
+                  styles.movieTitle,
+                  {color: isDarkMode ? 'white' : '#333'},
+                ]}
+                numberOfLines={1}
+                ellipsizeMode="tail">
+                {item.title}
+              </Text>
+            </View>
+          )}
+          showsHorizontalScrollIndicator={false}
+        />
+      )}
     </View>
   );
 };

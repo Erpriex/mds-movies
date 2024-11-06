@@ -18,6 +18,7 @@ import {CrossIcon} from '../utils/Icons.tsx';
 import MoviesCaroussel from '../components/MoviesCaroussel.tsx';
 import {fetchBestMovies, fetchMarvelMovies} from '../services/api.tsx';
 import HomeCategoryFilter from '../components/HomeCategoryFilter.tsx';
+import Category from '../utils/Category.tsx';
 
 const styles = StyleSheet.create({
   screenSection: {
@@ -79,9 +80,19 @@ const styles = StyleSheet.create({
 const HomeScreen = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
-  const [selectedCategory, setSelectedCategory] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState<Category>(
+    Category.ALL,
+  );
   const [marvelMovies, setMarvelMovies] = useState([]);
   const [bestMovies, setBestMovies] = useState([]);
+
+  const categories = [
+    Category.ALL,
+    Category.ROMANCE,
+    Category.SPORTS,
+    Category.KIDS,
+    Category.HORROR,
+  ];
 
   const gradientColors = isDarkMode
     ? ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)', 'rgba(0, 0, 0, 0.8)', 'black']
@@ -94,16 +105,16 @@ const HomeScreen = () => {
 
   useEffect(() => {
     const getMarvelMovies = async () => {
-      const marvelMovies = await fetchMarvelMovies();
+      const marvelMovies = await fetchMarvelMovies(selectedCategory);
       setMarvelMovies(marvelMovies);
     };
     const getBestMovies = async () => {
-      const bestMovies = await fetchBestMovies();
+      const bestMovies = await fetchBestMovies(selectedCategory);
       setBestMovies(bestMovies);
     };
     getMarvelMovies();
     getBestMovies();
-  }, []);
+  }, [selectedCategory]);
 
   return (
     <ScrollView
@@ -126,6 +137,7 @@ const HomeScreen = () => {
         />
       </View>
       <HomeCategoryFilter
+        categories={categories}
         selected={selectedCategory}
         onSelectCategory={setSelectedCategory}
       />
@@ -166,8 +178,16 @@ const HomeScreen = () => {
           </View>
         </View>
         <View style={styles.carousselsContainer}>
-          <MoviesCaroussel title="Marvel studios" movies={marvelMovies} />
-          <MoviesCaroussel title="Best movies" movies={bestMovies} />
+          <MoviesCaroussel
+            title="Marvel studios"
+            movies={marvelMovies}
+            selectedCategory={selectedCategory}
+          />
+          <MoviesCaroussel
+            title="Best movies"
+            movies={bestMovies}
+            selectedCategory={selectedCategory}
+          />
         </View>
         <View style={styles.blackFridayContainer}>
           <Image
