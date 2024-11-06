@@ -109,3 +109,16 @@ export const ProfileIcon = ({width = 14, height = 18, stroke = 'black'}) => {
     </Svg>
   );
 };
+
+export const PointIcon = ({width = 6, height = 6, stroke = 'white'}) => {
+  return (
+    <Svg
+      width={width}
+      height={height}
+      viewBox="0 0 7 6"
+      fill="none"
+    >
+      <Circle id="Ellipse 1" cx="3.5" cy="3" r="3" fill={stroke} />
+    </Svg>
+  );
+};

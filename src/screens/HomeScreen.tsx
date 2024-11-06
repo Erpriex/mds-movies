@@ -6,9 +6,12 @@ import {
   StyleSheet,
   Image,
   ScrollView,
+  Animated,
 } from 'react-native';
 // @ts-ignore
 import HomeBackgroundImg from '../assets/images/home_background.png';
+// @ts-ignore
+import HomeBackground2Img from '../assets/images/home_background_2.jpg';
 // @ts-ignore
 import BlackFridayImg from '../assets/images/black_friday.jpeg';
 import LinearGradient from 'react-native-linear-gradient';
@@ -19,6 +22,7 @@ import MoviesCaroussel from '../components/MoviesCaroussel.tsx';
 import {fetchBestMovies, fetchMarvelMovies} from '../services/api.tsx';
 import HomeCategoryFilter from '../components/HomeCategoryFilter.tsx';
 import Category from '../utils/Category.tsx';
+import HomeHeaderPagination from '../components/HomeHeaderPagination.tsx';
 
 const styles = StyleSheet.create({
   screenSection: {
@@ -80,11 +84,14 @@ const styles = StyleSheet.create({
 const HomeScreen = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
+  const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<Category>(
     Category.ALL,
   );
   const [marvelMovies, setMarvelMovies] = useState([]);
   const [bestMovies, setBestMovies] = useState([]);
+
+  const fadeAnim = useState(new Animated.Value(1))[0];
 
   const categories = [
     Category.ALL,
@@ -93,6 +100,8 @@ const HomeScreen = () => {
     Category.KIDS,
     Category.HORROR,
   ];
+
+  const backgroundImgs = [HomeBackgroundImg, HomeBackground2Img];
 
   const gradientColors = isDarkMode
     ? ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)', 'rgba(0, 0, 0, 0.8)', 'black']
@@ -116,6 +125,28 @@ const HomeScreen = () => {
     getBestMovies();
   }, [selectedCategory]);
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      Animated.timing(fadeAnim, {
+        toValue: 0,
+        duration: 500,
+        useNativeDriver: true,
+      }).start(() => {
+        setCurrentBackgroundIndex(
+          prevIndex => (prevIndex + 1) % backgroundImgs.length,
+        );
+
+        Animated.timing(fadeAnim, {
+          toValue: 1,
+          duration: 500,
+          useNativeDriver: true,
+        }).start();
+      });
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, [backgroundImgs.length, fadeAnim]);
+
   return (
     <ScrollView
       style={[
@@ -124,9 +155,9 @@ const HomeScreen = () => {
       ]}
       contentContainerStyle={{paddingBottom: 20}}>
       <View style={styles.backgroundImgSection}>
-        <Image
-          style={{width: '100%'}}
-          source={HomeBackgroundImg}
+        <Animated.Image
+          style={{width: '100%', opacity: fadeAnim}}
+          source={backgroundImgs[currentBackgroundIndex]}
           resizeMode="stretch"
         />
         <LinearGradient
@@ -177,6 +208,10 @@ const HomeScreen = () => {
             </View>
           </View>
         </View>
+        <HomeHeaderPagination
+          count={backgroundImgs.length}
+          selectedIndex={currentBackgroundIndex}
+        />
         <View style={styles.carousselsContainer}>
           <MoviesCaroussel
             title="Marvel studios"
