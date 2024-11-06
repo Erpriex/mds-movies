@@ -1,5 +1,11 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableWithoutFeedback,
+  Animated,
+} from 'react-native';
 import {FontFamilies} from '../constants/fonts.tsx';
 
 const styles = StyleSheet.create({
@@ -29,11 +35,39 @@ const LargeButton = ({
   textColor: string;
   icon?: React.ReactNode;
 }) => {
+  const [scale] = useState(new Animated.Value(1));
+
+  const handlePressIn = () => {
+    Animated.spring(scale, {
+      toValue: 0.95,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  const handlePressOut = () => {
+    Animated.spring(scale, {
+      toValue: 1,
+      useNativeDriver: true,
+    }).start();
+  };
+
   return (
-    <View style={[styles.button, {backgroundColor: backgroundColor}]}>
-      {icon && <View>{icon}</View>}
-      <Text style={[styles.label, {color: textColor}]}>{text}</Text>
-    </View>
+    <TouchableWithoutFeedback
+      onPressIn={handlePressIn}
+      onPressOut={handlePressOut}
+      >
+      <Animated.View
+        style={[
+          styles.button,
+          {
+            backgroundColor: backgroundColor,
+            transform: [{scale}],
+          },
+        ]}>
+        {icon && <View>{icon}</View>}
+        <Text style={[styles.label, {color: textColor}]}>{text}</Text>
+      </Animated.View>
+    </TouchableWithoutFeedback>
   );
 };
 
