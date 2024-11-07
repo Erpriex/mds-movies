@@ -25,8 +25,12 @@ import {fetchBestMovies, fetchMarvelMovies} from '../services/api.tsx';
 import HomeCategoryFilter from '../components/HomeCategoryFilter.tsx';
 import Category from '../utils/Category.tsx';
 import HomeHeaderPagination from '../components/HomeHeaderPagination.tsx';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const styles = StyleSheet.create({
+  safeSection: {
+    flex: 1,
+  },
   screenSection: {
     height: '100%',
   },
@@ -154,113 +158,116 @@ const HomeScreen = () => {
   }, [backgroundImgs.length, fadeAnim]);
 
   return (
-    <ScrollView
-      style={[
-        styles.screenSection,
-        {backgroundColor: isDarkMode ? 'black' : 'white'},
-      ]}
-      contentContainerStyle={{paddingBottom: 20}}>
-      <View style={styles.backgroundImgSection}>
-        <Animated.Image
-          style={{width: '100%', opacity: fadeAnim}}
-          source={backgroundImgs[currentBackgroundIndex]}
-          resizeMode="stretch"
+    <SafeAreaView style={styles.safeSection}>
+      <ScrollView
+        style={[
+          styles.screenSection,
+          {backgroundColor: isDarkMode ? 'black' : 'white'},
+        ]}
+        contentContainerStyle={{paddingBottom: 20}}>
+        <View style={styles.backgroundImgSection}>
+          <Animated.Image
+            style={{width: '100%', opacity: fadeAnim}}
+            source={backgroundImgs[currentBackgroundIndex]}
+            resizeMode="stretch"
+          />
+          <LinearGradient
+            colors={gradientColors}
+            start={{x: 0.5, y: 0}}
+            end={{x: 0.5, y: 1}}
+            style={styles.gradientOverlay}
+          />
+        </View>
+        <HomeCategoryFilter
+          categories={categories}
+          selected={selectedCategory}
+          onSelectCategory={setSelectedCategory}
         />
-        <LinearGradient
-          colors={gradientColors}
-          start={{x: 0.5, y: 0}}
-          end={{x: 0.5, y: 1}}
-          style={styles.gradientOverlay}
-        />
-      </View>
-      <HomeCategoryFilter
-        categories={categories}
-        selected={selectedCategory}
-        onSelectCategory={setSelectedCategory}
-      />
-      <View style={styles.containerSection}>
-        <View style={styles.buttonsHeaderSection}>
-          <View style={{flex: 1}}>
-            <Text
-              style={[
-                styles.buttonsHeader,
-                {textAlign: 'right', color: isDarkMode ? '#FFF' : '#000'},
-              ]}>
-              My list
-            </Text>
-            <View style={{marginVertical: 24}}>
-              <LargeButton
-                text="Wishlist"
-                backgroundColor="#333"
-                textColor="#FFF"
-                icon={<CrossIcon />}
-              />
+        <View style={styles.containerSection}>
+          <View style={styles.buttonsHeaderSection}>
+            <View style={{flex: 1}}>
+              <Text
+                style={[
+                  styles.buttonsHeader,
+                  {textAlign: 'right', color: isDarkMode ? '#FFF' : '#000'},
+                ]}>
+                My list
+              </Text>
+              <View style={{marginVertical: 24}}>
+                <LargeButton
+                  text="Wishlist"
+                  backgroundColor="#333"
+                  textColor="#FFF"
+                  icon={<CrossIcon />}
+                />
+              </View>
+            </View>
+            <View style={{flex: 1}}>
+              <Text
+                style={[
+                  styles.buttonsHeader,
+                  {color: isDarkMode ? '#FFF' : '#000'},
+                ]}>
+                Discover
+              </Text>
+              <View style={{marginVertical: 24}}>
+                <LargeButton
+                  text="Details"
+                  backgroundColor="#F2C94C"
+                  textColor={isDarkMode ? '#333' : '#FFF'}
+                />
+              </View>
             </View>
           </View>
-          <View style={{flex: 1}}>
-            <Text
-              style={[
-                styles.buttonsHeader,
-                {color: isDarkMode ? '#FFF' : '#000'},
-              ]}>
-              Discover
-            </Text>
-            <View style={{marginVertical: 24}}>
-              <LargeButton
-                text="Details"
-                backgroundColor="#F2C94C"
-                textColor={isDarkMode ? '#333' : '#FFF'}
-              />
+          <HomeHeaderPagination
+            count={backgroundImgs.length}
+            selectedIndex={currentBackgroundIndex}
+          />
+          <View style={styles.carousselsContainer}>
+            <MoviesCaroussel
+              title="Marvel studios"
+              movies={marvelMovies}
+              selectedCategory={selectedCategory}
+            />
+            <MoviesCaroussel
+              title="Best movies"
+              movies={bestMovies}
+              selectedCategory={selectedCategory}
+              showDetails
+            />
+          </View>
+          <View style={styles.blackFridayContainer}>
+            <Image
+              source={BlackFridayImg}
+              style={styles.blackFridayImg}
+              resizeMode="cover"
+            />
+            <View>
+              <Text
+                style={[
+                  styles.blackFridayTitle,
+                  {color: isDarkMode ? '#FFF' : '#000'},
+                ]}>
+                Black friday is here !
+              </Text>
+              <Text
+                style={[
+                  styles.blackFridayDescription,
+                  {color: isDarkMode ? '#FFF' : '#000'},
+                ]}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+                sociis pulvinar auctor nibh nibh iaculis id.
+              </Text>
             </View>
+            <LargeButton
+              text="Check details"
+              backgroundColor="#F2C94C"
+              textColor={isDarkMode ? '#333' : '#FFF'}
+            />
           </View>
         </View>
-        <HomeHeaderPagination
-          count={backgroundImgs.length}
-          selectedIndex={currentBackgroundIndex}
-        />
-        <View style={styles.carousselsContainer}>
-          <MoviesCaroussel
-            title="Marvel studios"
-            movies={marvelMovies}
-            selectedCategory={selectedCategory}
-          />
-          <MoviesCaroussel
-            title="Best movies"
-            movies={bestMovies}
-            selectedCategory={selectedCategory}
-          />
-        </View>
-        <View style={styles.blackFridayContainer}>
-          <Image
-            source={BlackFridayImg}
-            style={styles.blackFridayImg}
-            resizeMode="cover"
-          />
-          <View>
-            <Text
-              style={[
-                styles.blackFridayTitle,
-                {color: isDarkMode ? '#FFF' : '#000'},
-              ]}>
-              Black friday is here !
-            </Text>
-            <Text
-              style={[
-                styles.blackFridayDescription,
-                {color: isDarkMode ? '#FFF' : '#000'},
-              ]}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
-              sociis pulvinar auctor nibh nibh iaculis id.
-            </Text>
-          </View>
-          <LargeButton
-            text="Check details"
-            backgroundColor="#F2C94C"
-            textColor={isDarkMode ? '#333' : '#FFF'}
-          />
-        </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import {FontFamilies} from '../constants/fonts.tsx';
 import Category, {getCategoryLabel} from '../utils/Category.tsx';
+import {StarIcon} from '../utils/Icons.tsx';
 
 const styles = StyleSheet.create({
   headerCaroussel: {
@@ -34,6 +35,7 @@ const styles = StyleSheet.create({
   movieItem: {
     marginRight: 10,
     justifyContent: 'center',
+    position: 'relative',
   },
   posterImage: {
     width: 120,
@@ -54,22 +56,52 @@ const styles = StyleSheet.create({
     color: '#aaa',
     marginTop: 20,
   },
+  detailsSection: {
+    position: 'absolute',
+    bottom: 10,
+    width: '100%',
+    paddingHorizontal: 8,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  detailsTitle: {
+    fontFamily: FontFamilies.GILROY.medium,
+    fontSize: 12,
+    color: 'white',
+    width: 65,
+  },
+  detailsVoteSection: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+  },
+  detailsVote: {
+    fontFamily: FontFamilies.GILROY.medium,
+    fontSize: 12,
+    color: 'white',
+  },
 });
 
 interface Movie {
   id: number;
   title: string;
   poster_path: string;
+  vote_average: number;
 }
 
 const MoviesCaroussel = ({
   title,
   movies,
   selectedCategory,
+  showDetails = false,
 }: {
   title: string;
   movies: Movie[];
   selectedCategory: Category;
+  showDetails?: boolean;
 }) => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -105,15 +137,32 @@ const MoviesCaroussel = ({
                 style={styles.posterImage}
                 resizeMode="cover"
               />
-              <Text
-                style={[
-                  styles.movieTitle,
-                  {color: isDarkMode ? 'white' : '#333'},
-                ]}
-                numberOfLines={1}
-                ellipsizeMode="tail">
-                {item.title}
-              </Text>
+              {showDetails ? (
+                <View style={styles.detailsSection}>
+                  <Text
+                    style={styles.detailsTitle}
+                    numberOfLines={1}
+                    ellipsizeMode="tail">
+                    {item.title}
+                  </Text>
+                  <View style={styles.detailsVoteSection}>
+                    <StarIcon stroke="#F2C94C" />
+                    <Text style={styles.detailsVote}>
+                      {item.vote_average.toFixed(1)}
+                    </Text>
+                  </View>
+                </View>
+              ) : (
+                <Text
+                  style={[
+                    styles.movieTitle,
+                    {color: isDarkMode ? 'white' : '#333'},
+                  ]}
+                  numberOfLines={1}
+                  ellipsizeMode="tail">
+                  {item.title}
+                </Text>
+              )}
             </View>
           )}
           showsHorizontalScrollIndicator={false}
