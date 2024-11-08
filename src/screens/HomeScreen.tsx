@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     height: '30%',
     bottom: 0,
   },
-  containerSection: {
+  marginContainer: {
     marginLeft: '5%',
     marginRight: '5%',
   },
@@ -183,8 +183,8 @@ const HomeScreen = () => {
           selected={selectedCategory}
           onSelectCategory={setSelectedCategory}
         />
-        <View style={styles.containerSection}>
-          <View style={styles.buttonsHeaderSection}>
+        <View>
+          <View style={[styles.marginContainer, styles.buttonsHeaderSection]}>
             <View style={{flex: 1}}>
               <Text
                 style={[
@@ -236,7 +236,7 @@ const HomeScreen = () => {
               showDetails
             />
           </View>
-          <View style={styles.blackFridayContainer}>
+          <View style={[styles.marginContainer, styles.blackFridayContainer]}>
             <Image
               source={BlackFridayImg}
               style={styles.blackFridayImg}

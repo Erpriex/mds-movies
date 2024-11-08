@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    paddingRight: '5%',
   },
   carousselTitle: {
     fontFamily: FontFamilies.GILROY.bold,
@@ -108,7 +109,7 @@ const MoviesCaroussel = ({
   const imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
 
   return (
-    <View>
+    <View style={{marginLeft: '5%'}}>
       <View style={styles.headerCaroussel}>
         <Text
           style={[
