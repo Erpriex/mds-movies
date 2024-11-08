@@ -48,9 +48,9 @@ function App(): React.JSX.Element {
           tabBarInactiveTintColor: isDarkMode ? '#fff' : '#000',
           tabBarStyle: {
             backgroundColor: isDarkMode ? '#000' : '#fff',
-            paddingBottom: 8,
+            paddingBottom: 28,
             paddingTop: 8,
-            height: 70,
+            height: 90,
           },
           tabBarLabelStyle: {
             fontSize: 10,
