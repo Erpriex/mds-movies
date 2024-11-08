@@ -28,7 +28,11 @@ const HomeHeaderPagination = ({
         <PointIcon
           key={index}
           stroke={
-            index === selectedIndex ? '#F2C94C' : isDarkMode ? 'white' : '#BDBDBD'
+            index === selectedIndex
+              ? '#F2C94C'
+              : isDarkMode
+              ? 'white'
+              : '#BDBDBD'
           }
         />
       ))}

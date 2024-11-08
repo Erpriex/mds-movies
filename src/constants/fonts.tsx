@@ -7,7 +7,9 @@ export const FontFamilies = {
     bold: isIOS() ? 'Gilroy-Bold' : 'GilroyBold',
     boldItalic: isIOS() ? 'Gilroy-BoldItalic' : 'GilroyBoldItalic',
     extraBold: isIOS() ? 'Gilroy-ExtraBold' : 'GilroyExtraBold',
-    extraBoldItalic: isIOS() ? 'Gilroy-ExtraBoldItalic' : 'GilroyExtraBoldItalic',
+    extraBoldItalic: isIOS()
+      ? 'Gilroy-ExtraBoldItalic'
+      : 'GilroyExtraBoldItalic',
     heavy: isIOS() ? 'Gilroy-Heavy' : 'GilroyHeavy',
     heavyItalic: isIOS() ? 'Gilroy-HeavyItalic' : 'GilroyHeavyItalic',
     light: isIOS() ? 'Gilroy-Light' : 'GilroyLight',
@@ -21,6 +23,8 @@ export const FontFamilies = {
     thin: isIOS() ? 'Gilroy-Thin' : 'GilroyThin',
     thinItalic: isIOS() ? 'Gilroy-ThinItalic' : 'GilroyThinItalic',
     ultraLight: isIOS() ? 'Gilroy-UltraLight' : 'GilroyUltraLight',
-    ultraLightItalic: isIOS() ? 'Gilroy-UltraLightItalic' : 'GilroyUltraLightItalic',
-  }
+    ultraLightItalic: isIOS()
+      ? 'Gilroy-UltraLightItalic'
+      : 'GilroyUltraLightItalic',
+  },
 };

@@ -4,11 +4,11 @@ import {FontFamilies} from '../constants/fonts.tsx';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 const styles = StyleSheet.create({
-    safeSection: {
-        flex: 1,
-    },
+  safeSection: {
+    flex: 1,
+  },
   screenSection: {
-      flex: 1,
+    flex: 1,
     height: '100%',
     display: 'flex',
     justifyContent: 'center',
@@ -24,17 +24,17 @@ const EmptyScreen = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-      <SafeAreaView style={styles.safeSection}>
-          <View
-              style={[
-                  styles.screenSection,
-                  {backgroundColor: isDarkMode ? 'black' : 'white'},
-              ]}>
-              <Text style={[styles.title, {color: isDarkMode ? '#FFF' : '#000'}]}>
-                  Soon !
-              </Text>
-          </View>
-      </SafeAreaView>
+    <SafeAreaView style={styles.safeSection}>
+      <View
+        style={[
+          styles.screenSection,
+          {backgroundColor: isDarkMode ? 'black' : 'white'},
+        ]}>
+        <Text style={[styles.title, {color: isDarkMode ? '#FFF' : '#000'}]}>
+          Soon !
+        </Text>
+      </View>
+    </SafeAreaView>
   );
 };
 

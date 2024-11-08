@@ -24,4 +24,4 @@ const getCategoryLabel = (category: Category): string => {
 };
 
 export default Category;
-export { getCategoryLabel };
+export {getCategoryLabel};

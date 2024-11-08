@@ -54,8 +54,7 @@ const LargeButton = ({
   return (
     <TouchableWithoutFeedback
       onPressIn={handlePressIn}
-      onPressOut={handlePressOut}
-      >
+      onPressOut={handlePressOut}>
       <Animated.View
         style={[
           styles.button,
