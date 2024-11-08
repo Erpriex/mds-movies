@@ -24,7 +24,7 @@ const EmptyScreen = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <SafeAreaView style={styles.safeSection}>
+      <SafeAreaView style={styles.safeSection} edges={['top', 'left', 'right']}>
       <View
         style={[
           styles.screenSection,

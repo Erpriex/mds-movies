@@ -51,7 +51,7 @@
 		00E356EE1AD99517003FC87E /* MDS_MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MDS_MoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* MDS_MoviesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDS_MoviesTests.m; sourceTree = "<group>"; };
-		0D489236379E4347BEB6534B /* GilroyLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyLight.ttf; path = ../src/assets/fonts/GilroyLight.ttf; sourceTree = "<group>"; };
+		0D489236379E4347BEB6534B /* GilroyLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyLight.ttf; path = ../src/assets/fonts/GilroyLight.ttf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MDS_Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDS_Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MDS_Movies/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = MDS_Movies/AppDelegate.mm; sourceTree = "<group>"; };
@@ -59,34 +59,34 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MDS_Movies/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MDS_Movies/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = MDS_Movies/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		16A58B717C7C4B60868FF2C8 /* GilroyRegularItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyRegularItalic.ttf; path = ../src/assets/fonts/GilroyRegularItalic.ttf; sourceTree = "<group>"; };
+		16A58B717C7C4B60868FF2C8 /* GilroyRegularItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyRegularItalic.ttf; path = ../src/assets/fonts/GilroyRegularItalic.ttf; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-MDS_Movies-MDS_MoviesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MDS_Movies-MDS_MoviesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		203B7D5905B6F825C138A23E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = MDS_Movies/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		29BA05664087432592C9D8D6 /* GilroyRegular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyRegular.ttf; path = ../src/assets/fonts/GilroyRegular.ttf; sourceTree = "<group>"; };
-		376C53312E8A43E39E65E6C9 /* GilroySemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroySemiBold.ttf; path = ../src/assets/fonts/GilroySemiBold.ttf; sourceTree = "<group>"; };
+		203B7D5905B6F825C138A23E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = MDS_Movies/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		29BA05664087432592C9D8D6 /* GilroyRegular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyRegular.ttf; path = ../src/assets/fonts/GilroyRegular.ttf; sourceTree = "<group>"; };
+		376C53312E8A43E39E65E6C9 /* GilroySemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroySemiBold.ttf; path = ../src/assets/fonts/GilroySemiBold.ttf; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-MDS_Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDS_Movies.debug.xcconfig"; path = "Target Support Files/Pods-MDS_Movies/Pods-MDS_Movies.debug.xcconfig"; sourceTree = "<group>"; };
-		406C213EF7F14BAF938FE589 /* GilroyMedium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyMedium.ttf; path = ../src/assets/fonts/GilroyMedium.ttf; sourceTree = "<group>"; };
-		54BCB46B97A44AFABAEA1F76 /* GilroyLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyLightItalic.ttf; path = ../src/assets/fonts/GilroyLightItalic.ttf; sourceTree = "<group>"; };
-		55371FFB4C204B72A40FA70E /* GilroyThin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyThin.ttf; path = ../src/assets/fonts/GilroyThin.ttf; sourceTree = "<group>"; };
-		5571A0EFA0294510B5086A0B /* GilroyBlack.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyBlack.ttf; path = ../src/assets/fonts/GilroyBlack.ttf; sourceTree = "<group>"; };
+		406C213EF7F14BAF938FE589 /* GilroyMedium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyMedium.ttf; path = ../src/assets/fonts/GilroyMedium.ttf; sourceTree = "<group>"; };
+		54BCB46B97A44AFABAEA1F76 /* GilroyLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyLightItalic.ttf; path = ../src/assets/fonts/GilroyLightItalic.ttf; sourceTree = "<group>"; };
+		55371FFB4C204B72A40FA70E /* GilroyThin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyThin.ttf; path = ../src/assets/fonts/GilroyThin.ttf; sourceTree = "<group>"; };
+		5571A0EFA0294510B5086A0B /* GilroyBlack.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyBlack.ttf; path = ../src/assets/fonts/GilroyBlack.ttf; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-MDS_Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDS_Movies.release.xcconfig"; path = "Target Support Files/Pods-MDS_Movies/Pods-MDS_Movies.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-MDS_Movies-MDS_MoviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDS_Movies-MDS_MoviesTests.debug.xcconfig"; path = "Target Support Files/Pods-MDS_Movies-MDS_MoviesTests/Pods-MDS_Movies-MDS_MoviesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5CFA2CBBBF724399933A271D /* GilroyHeavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyHeavy.ttf; path = ../src/assets/fonts/GilroyHeavy.ttf; sourceTree = "<group>"; };
+		5CFA2CBBBF724399933A271D /* GilroyHeavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyHeavy.ttf; path = ../src/assets/fonts/GilroyHeavy.ttf; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-MDS_Movies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MDS_Movies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E8A601C65C34A4DAAE22A9C /* GilroySemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroySemiBoldItalic.ttf; path = ../src/assets/fonts/GilroySemiBoldItalic.ttf; sourceTree = "<group>"; };
+		5E8A601C65C34A4DAAE22A9C /* GilroySemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroySemiBoldItalic.ttf; path = ../src/assets/fonts/GilroySemiBoldItalic.ttf; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MDS_Movies/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8551B52B12454582A9A79E39 /* GilroyExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyExtraBoldItalic.ttf; path = ../src/assets/fonts/GilroyExtraBoldItalic.ttf; sourceTree = "<group>"; };
+		8551B52B12454582A9A79E39 /* GilroyExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyExtraBoldItalic.ttf; path = ../src/assets/fonts/GilroyExtraBoldItalic.ttf; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-MDS_Movies-MDS_MoviesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDS_Movies-MDS_MoviesTests.release.xcconfig"; path = "Target Support Files/Pods-MDS_Movies-MDS_MoviesTests/Pods-MDS_Movies-MDS_MoviesTests.release.xcconfig"; sourceTree = "<group>"; };
-		89FA8E75AC0844EE8DA090C0 /* GilroyExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyExtraBold.ttf; path = ../src/assets/fonts/GilroyExtraBold.ttf; sourceTree = "<group>"; };
-		8C6C067673934F6CA31CBFE3 /* GilroyUltraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyUltraLightItalic.ttf; path = ../src/assets/fonts/GilroyUltraLightItalic.ttf; sourceTree = "<group>"; };
-		A21CA25B37C54592BBE5F738 /* GilroyBlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyBlackItalic.ttf; path = ../src/assets/fonts/GilroyBlackItalic.ttf; sourceTree = "<group>"; };
-		C2CD9F125FD24F40B68354EA /* GilroyBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyBold.ttf; path = ../src/assets/fonts/GilroyBold.ttf; sourceTree = "<group>"; };
-		C7F6589953CC4B178588C873 /* GilroyThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyThinItalic.ttf; path = ../src/assets/fonts/GilroyThinItalic.ttf; sourceTree = "<group>"; };
-		D25B8BE1E836442BBD55C8B1 /* GilroyHeavyItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyHeavyItalic.ttf; path = ../src/assets/fonts/GilroyHeavyItalic.ttf; sourceTree = "<group>"; };
-		D74A6D77E41B49029B97A959 /* GilroyUltraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyUltraLight.ttf; path = ../src/assets/fonts/GilroyUltraLight.ttf; sourceTree = "<group>"; };
-		DCA21A95076C4302B5383BED /* GilroyMediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyMediumItalic.ttf; path = ../src/assets/fonts/GilroyMediumItalic.ttf; sourceTree = "<group>"; };
+		89FA8E75AC0844EE8DA090C0 /* GilroyExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyExtraBold.ttf; path = ../src/assets/fonts/GilroyExtraBold.ttf; sourceTree = "<group>"; };
+		8C6C067673934F6CA31CBFE3 /* GilroyUltraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyUltraLightItalic.ttf; path = ../src/assets/fonts/GilroyUltraLightItalic.ttf; sourceTree = "<group>"; };
+		A21CA25B37C54592BBE5F738 /* GilroyBlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyBlackItalic.ttf; path = ../src/assets/fonts/GilroyBlackItalic.ttf; sourceTree = "<group>"; };
+		C2CD9F125FD24F40B68354EA /* GilroyBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyBold.ttf; path = ../src/assets/fonts/GilroyBold.ttf; sourceTree = "<group>"; };
+		C7F6589953CC4B178588C873 /* GilroyThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyThinItalic.ttf; path = ../src/assets/fonts/GilroyThinItalic.ttf; sourceTree = "<group>"; };
+		D25B8BE1E836442BBD55C8B1 /* GilroyHeavyItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyHeavyItalic.ttf; path = ../src/assets/fonts/GilroyHeavyItalic.ttf; sourceTree = "<group>"; };
+		D74A6D77E41B49029B97A959 /* GilroyUltraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyUltraLight.ttf; path = ../src/assets/fonts/GilroyUltraLight.ttf; sourceTree = "<group>"; };
+		DCA21A95076C4302B5383BED /* GilroyMediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyMediumItalic.ttf; path = ../src/assets/fonts/GilroyMediumItalic.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F5F72565A4F84830A91162CF /* GilroyBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyBoldItalic.ttf; path = ../src/assets/fonts/GilroyBoldItalic.ttf; sourceTree = "<group>"; };
+		F5F72565A4F84830A91162CF /* GilroyBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GilroyBoldItalic.ttf; path = ../src/assets/fonts/GilroyBoldItalic.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,7 +219,6 @@
 				8C6C067673934F6CA31CBFE3 /* GilroyUltraLightItalic.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -561,6 +560,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FUBDJAK7YV;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MDS_Movies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -588,6 +588,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FUBDJAK7YV;
 				INFOPLIST_FILE = MDS_Movies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -679,10 +680,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -755,10 +753,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
