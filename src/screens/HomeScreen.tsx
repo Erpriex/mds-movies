@@ -158,7 +158,7 @@ const HomeScreen = () => {
   }, [backgroundImgs.length, fadeAnim]);
 
   return (
-    <SafeAreaView style={styles.safeSection}>
+    <SafeAreaView style={styles.safeSection} edges={['top', 'left', 'right']}>
       <ScrollView
         style={[
           styles.screenSection,
